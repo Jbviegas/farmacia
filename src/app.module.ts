@@ -2,7 +2,8 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
-
+import { CategoriaModule } from './categoria/services/categoria.module';
+import { Categoria } from './categoria/entities/categoria.entity';
 
 @Module({
   imports: [
@@ -13,9 +14,12 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       username: 'root',
       password: 'root',
       database: 'db_farmacia',
-      entities: [],
+      entities: [Categoria],
       synchronize: true,
- }) ],
+ }),
+  CategoriaModule
+    //Instancia o módulo de categoria(CategoriaModule), importando o TypeOrmModule para a entidade Categoria, e registrando o controlador e serviço de categoria.
+ ],
   controllers: [AppController],
   providers: [AppService],
 })
