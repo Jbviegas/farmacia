@@ -4,10 +4,10 @@
 //  O módulo de categoria é responsável por agrupar os componentes relacionados aos categorias, como o serviço e o controlador.
 
 import { TypeOrmModule } from "@nestjs/typeorm/dist/typeorm.module";
-import { Categoria } from "../entities/categoria.entity";
+import { Categoria } from "./entities/categoria.entity";
 import { Module } from "@nestjs/common/decorators/modules/module.decorator";
-import { CategoriaService } from "./categoria.service";
-import { CategoriaController } from "../controllers/categoria.controller";
+import { CategoriaService } from "./services/categoria.service";
+import { CategoriaController } from "./controllers/categoria.controller";
 
 @Module({//Configuração do módulo de categoria, especificando as importações, controladores e provedores necessários para o funcionamento do módulo.
 
